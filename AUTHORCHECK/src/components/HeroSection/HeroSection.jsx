@@ -4,7 +4,7 @@ import styles from './HeroSection.module.css';
 const HeroSection = () => {
   return (
     <section className="bg-gradient-to-b from-white to-gray-100 py-20 px-6 text-center">
-      <div className="max-w-4xl mx-auto">
+      <div className={`max-w-4xl mx-auto ${styles.fadeIn}`}>
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
           Welcome to <span className="text-blue-600">AuthorCheck</span>
         </h1>

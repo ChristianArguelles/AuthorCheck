@@ -1,0 +1,17 @@
+.tabButton {
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    color: #4b5563;
+    transition: all 0.3s ease;
+  }
+  
+  .tabButton:hover {
+    color: #2563eb;
+  }
+  
+  .active {
+    border-bottom: 2px solid #2563eb;
+    color: #2563eb;
+  }
+  
