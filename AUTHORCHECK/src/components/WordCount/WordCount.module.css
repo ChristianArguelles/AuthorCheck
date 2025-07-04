@@ -1,24 +1,22 @@
+/* WordCount.module.css */
 .card {
-    background-color: #f9fafb;
-    border: 1px solid #e5e7eb;
-    padding: 1rem;
-    border-radius: 0.75rem;
-    text-align: center;
-    transition: 0.2s ease;
-  }
-  
-  .card:hover {
-    background-color: #f3f4f6;
-  }
-  
-  .label {
-    font-size: 0.875rem;
-    color: #6b7280;
-  }
-  
-  .value {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #111827;
-  }
-  
+  background: white;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  border: 1px solid #e5e7eb; /* Tailwind's gray-200 */
+}
+
+.label {
+  font-size: 1rem;
+  color: #374151; /* Tailwind's gray-700 */
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2563eb; /* Tailwind's blue-600 */
+}

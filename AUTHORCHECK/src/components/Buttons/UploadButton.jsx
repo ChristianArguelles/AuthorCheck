@@ -1,6 +1,10 @@
 import React from 'react';
 import mammoth from 'mammoth';
 import * as pdfjsLib from 'pdfjs-dist';
+import styles from './Buttons.module.css';
+
+// Setup PDF.js worker
+pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
 
 const UploadButton = ({ onFileRead }) => {
   const handleFileUpload = async (e) => {
@@ -40,7 +44,7 @@ const UploadButton = ({ onFileRead }) => {
   };
 
   return (
-    <label className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded cursor-pointer transition">
+    <label className={styles.uploadButton}>
       Upload File
       <input
         type="file"

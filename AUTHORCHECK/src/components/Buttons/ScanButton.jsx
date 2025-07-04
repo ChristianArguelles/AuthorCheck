@@ -12,7 +12,6 @@ const ScanButton = ({ text, onAnalyze }) => {
 
     setLoading(true);
     try {
-      // Send to backend
       const response = await fetch('http://localhost:8000/analyze', {
         method: 'POST',
         headers: {
@@ -24,10 +23,11 @@ const ScanButton = ({ text, onAnalyze }) => {
       if (!response.ok) throw new Error('Server error');
 
       const result = await response.json();
-      onAnalyze(result); // Pass result to parent
+      onAnalyze(result); // 🔁 Notify parent
     } catch (error) {
       console.error(error);
       alert('Failed to analyze text. Please try again.');
+      onAnalyze(null); // Optional: signal failure
     } finally {
       setLoading(false);
     }
@@ -35,9 +35,12 @@ const ScanButton = ({ text, onAnalyze }) => {
 
   return (
     <button
+      type="button"
       onClick={handleScan}
-      className={`${styles.scanButton} bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full transition duration-300`}
-      disabled={loading}
+      className={`${styles.scanButton} bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full transition duration-300 ${
+        loading || !text.trim() ? 'opacity-50 cursor-not-allowed' : ''
+      }`}
+      disabled={loading || !text.trim()}
     >
       {loading ? 'Scanning...' : 'Scan Text'}
     </button>
